@@ -2,13 +2,18 @@ package cardsimulator;
 
 public class CardSimulator {
 
-    public static enum Suits {HEARTS, DIAMONDS, SPADES, CLUBS};
-    public static enum Values {ACE,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,
-                         TEN,JACK,QUEEN,KING};
+    public enum Suits {HEARTS, DIAMONDS, SPADES, CLUBS};
+    public enum Values {ACE, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
+                        NINE, TEN, JACK, QUEEN, KING};
     
     public static void main(String[] args) {
-       Card card = new Card(Suits.CLUBS, Values.KING);
-       System.out.println(card.toString());
+       Deck deck = new Deck();
+       
+       int size = deck.size();
+       
+       for(int i = 0; i < size; i++){
+       System.out.println(deck.pop());
+       }
     }
     
     public static String suitsToString(Suits suit){
@@ -40,5 +45,4 @@ public class CardSimulator {
             default: return "ERROR"; 
         }
     }
-    
 }
