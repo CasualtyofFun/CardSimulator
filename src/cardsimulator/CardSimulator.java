@@ -3,17 +3,20 @@ package cardsimulator;
 public class CardSimulator {
 
     public enum Suits {HEARTS, DIAMONDS, SPADES, CLUBS};
-    public enum Values {ACE, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
+    public enum Values {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
                         NINE, TEN, JACK, QUEEN, KING};
     
     public static void main(String[] args) {
        Deck deck = new Deck();
        
        int size = deck.size();
+       System.out.println(size);
+       System.out.println(deck.draw());
+       System.out.println(deck.size());
        
-       for(int i = 0; i < size; i++){
-       System.out.println(deck.pop());
-       }
+//       for(int i = 0; i < size; i++){
+//       System.out.println(deck.get(i));
+//       }
     }
     
     public static String suitsToString(Suits suit){
@@ -29,7 +32,6 @@ public class CardSimulator {
     public static String valuesToString(Values value){
         switch(value){
             case ACE: return "A";
-            case ONE: return "1";
             case TWO: return "2";
             case THREE: return "3";
             case FOUR: return "4";

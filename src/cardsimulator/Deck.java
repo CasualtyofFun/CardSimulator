@@ -7,16 +7,21 @@ package cardsimulator;
 
 import java.util.*;
 
-public class Deck extends Stack {
+public class Deck extends ArrayList<Card> {
        
     public Deck(){
         
         for(CardSimulator.Suits i : CardSimulator.Suits.values()){
            for(CardSimulator.Values j : CardSimulator.Values.values()){
-               push(new Card(i,j));
+               add(new Card(i,j));
            }
         }
     }
+    
+public Card draw(){
+    Random ranGen = new Random();
+    return this.remove(ranGen.nextInt(this.size()-1));
+}
  
     
 }
